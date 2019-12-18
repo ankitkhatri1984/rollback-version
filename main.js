@@ -38,7 +38,7 @@ app.on('ready', () => {
           autoUpdater.allowDowngrade = true;
           autoUpdater.allowPrerelease = true;
         }else{
-          autoUpdater.allowDowngrade = false;
+          autoUpdater.allowDowngrade = true;
           autoUpdater.allowPrerelease = false;
         }
        
