@@ -34,8 +34,14 @@ app.on('ready', () => {
       if(jsondata.autoUpdate){
         console.log("checking for updates and notify");
         autoUpdater.channel = jsondata.channel;
-        autoUpdater.allowDowngrade = true;
-        autoUpdater.allowPrerelease = true;
+        if(jsondata.channel === 'beta'){
+          autoUpdater.allowDowngrade = true;
+          autoUpdater.allowPrerelease = true;
+        }else{
+          autoUpdater.allowDowngrade = false;
+          autoUpdater.allowPrerelease = false;
+        }
+       
         autoUpdater.checkForUpdatesAndNotify();
         
       } else {
